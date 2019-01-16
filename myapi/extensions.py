@@ -10,7 +10,6 @@ from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from celery import Celery
 
-
 db = SQLAlchemy()
 jwt = JWTManager()
 ma = Marshmallow()

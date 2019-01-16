@@ -46,7 +46,7 @@ def register_blueprints(app):
     """
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(api.views.blueprint)
-
+    app.register_blueprint(api.resources.movie.blueprint_api, url_prefix="/movie")
 
 def init_celery(app=None):
     app = app or create_app()

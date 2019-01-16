@@ -10,6 +10,7 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     active = db.Column(db.Boolean, default=True)
+    list_of_rented_movies = db.relationship('rental_info', backref='renter')
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)

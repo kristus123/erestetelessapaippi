@@ -16,6 +16,11 @@ class UserSchema(ma.ModelSchema):
         sqla_session = db.session
 
 
+
+
+
+
+
 class UserResource(Resource):
     """Single object resource
     """
@@ -44,7 +49,8 @@ class UserResource(Resource):
 
 
 class UserList(Resource):
-    """Creation and get_all
+    """
+    Creation and get_all
     """
     method_decorators = [jwt_required]
 

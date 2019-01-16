@@ -1,8 +1,11 @@
 from .user import User
 from .blacklist import TokenBlacklist
+from .movie import movies, rental_info
 
 
 __all__ = [
     'User',
-    'TokenBlacklist'
+    'TokenBlacklist',
+    "movies",
+    "rental_info"
 ]

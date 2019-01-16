@@ -7,7 +7,6 @@ from flask_jwt_extended import (
     get_jwt_identity,
     get_raw_jwt
 )
-
 from myapi.models import User
 from myapi.extensions import pwd_context, jwt
 from myapi.auth.helpers import (
