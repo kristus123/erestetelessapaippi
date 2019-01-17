@@ -80,12 +80,6 @@ class rent_movie(Resource):
 		
 		movie   = db.session.query(movies).filter_by(title=title).first()
 		bruker  = db.session.query(User).get(int(user_id))
-
-
-
-
-
-
 		if movie == None:
 			return {"error": "does the movie exist ?"}
 		elif not movie.rental:
@@ -102,10 +96,26 @@ class rent_movie(Resource):
 					"movie.rental": str(movie.rental),
 					"rental_info": str(info.rental_info)}
 		else:
-			return {"movie already rented": "sorry"}
+			r_to = movie.rental.rented_to_date
+			return {"movie already rented": "sorry",
+					"would you like to rent it when it's available": str(r_to.strftime("%d.%m.%Y"))}
 
 
-
+@movie_api.resource("/pre_order_movie")
+class pre_order_movie(Resource):
+	def get(self):
+		title = request.args.get('title')
+		movie = movies.query.filter_by(title=title).first()
+		if movie:
+			return {"movie": str(movie.title),
+					'rented until': (movie.rental.rented_to_date).strftime('%d.%m.%Y')}
+		else:
+			return {"movie not foudn": "rip"}
+	def post(self):
+		c = request.get_json()
+		rental_days = int(c['rental_days'])
+		return {'pre-order complete, you will get the movie': "26.12.2019",
+				"rented for days":rental_days}
 
 
 @movie_api.resource("/get_movie_info")
