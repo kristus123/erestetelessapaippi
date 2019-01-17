@@ -25,7 +25,7 @@ Mako==1.0.7
 MarkupSafe==1.1.0
 marshmallow==2.17.0
 marshmallow-sqlalchemy==0.15.0
--e git+https://github.com/kristus123/erestetelessapaippi.git@e7b1008c714d1ffb35b43426c8215b33a97596d2#egg=myapi
+-e git+https://github.com/kristus123/erestetelessapaippi.git@ec05a4da749ecfd20b4d5a1b561cba41efdccff3#egg=myapi
 passlib==1.7.1
 pluggy==0.8.0
 psycopg2-binary==2.7.6.1
