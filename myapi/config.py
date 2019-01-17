@@ -6,7 +6,7 @@ Use env var to override
 DEBUG = True
 SECRET_KEY = "changeme"
 
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or ("postgresql://myuser:mypass@localhost/mydb")
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or ("sqlite:////tmp/myapi.db")
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
